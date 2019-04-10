@@ -28,6 +28,17 @@ namespace Company.Carstore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CarstoreContext>(options => options.UseInMemoryDatabase("Cars"));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -45,6 +56,7 @@ namespace Company.Carstore.Api
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }

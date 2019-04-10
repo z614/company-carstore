@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../car';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-cars',
@@ -8,29 +9,16 @@ import { Car } from '../car';
 })
 export class CarsComponent implements OnInit {
 
-  cars: Car[] = [
-  {
-    id: 1,
-    make: 'Jeep',
-    model: 'Compass',
-    year: 2015,
-    numofmiles: 85642,
-    numofseats: 5,
-    category: 'SUV' 
-  },
-  {
-    id: 2,
-    make: 'Ford',
-    model: 'Focus',
-    year: 2016,
-    numofmiles: 76589,
-    numofseats: 5,
-    category: 'Sedan'
-  }];
+  cars: Car[];
 
-  constructor() { }
+  constructor(private CarsService: CarsService) { }
 
   ngOnInit() {
+    this.getCars();
+  }
+
+  getCars() {
+    this.CarsService.getCars().subscribe(cars => (this.cars = cars));
   }
 
 }
