@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Company.Carstore.Api.Data;
 using Company.Carstore.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
