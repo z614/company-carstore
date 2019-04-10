@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Company.Carstore.Api.Models
 {
-    public class Cars
+    public class Car
     {
         public int Id { get; set; }
         public string Make { get; set; }
