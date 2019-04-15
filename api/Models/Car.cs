@@ -12,5 +12,9 @@ namespace Company.Carstore.Api.Models
         public int NumOfMiles { get; set; }
         public int NumOfSeats { get; set; }
         public string Category { get; set; }
+        public void ChangeNumofMiles(int numofmiles)
+        {
+            this.NumOfMiles = numofmiles;
+        }
     }
 }
