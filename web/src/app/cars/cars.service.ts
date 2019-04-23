@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CarsService {
-  private carsUri = 'https://localhost:5001/api/cars';
+  private carsUri = 'http://company-api-gunauger.azurewebsites.net/api/cars';
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error('${operation} failed: ${error.message}');
