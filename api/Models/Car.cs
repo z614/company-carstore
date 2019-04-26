@@ -9,12 +9,19 @@ namespace Company.Carstore.Api.Models
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
-        public int NumOfMiles { get; set; }
-        public int NumOfSeats { get; set; }
+        public int Miles { get; set; }
+        public int Seats { get; set; }
         public string Category { get; set; }
-        public void ChangeNumofMiles(int numofmiles)
+        public int Price { get; set; }
+
+        public void ChangeMiles(int miles)
         {
-            this.NumOfMiles = numofmiles;
+            this.Miles = miles;
+        }
+
+        public void ChangePrice(int price)
+        {
+            this.Price = price;
         }
     }
 }
